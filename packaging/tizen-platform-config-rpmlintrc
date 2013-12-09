@@ -1,0 +1,8 @@
+# avoid warning:
+# ------------------------
+# tizen-platform-config.x86_64: W: no-binary
+# The package should be of the noarch architecture because it doesn't contain
+# any binaries.
+# ------------------------
+
+addFilter("no-binary")
