@@ -10,6 +10,8 @@ TZ_SYS_ROOT=/opt/home/root
 TZ_SYS_SHARE=/opt/share
 TZ_SYS_ETC=/opt/etc
 TZ_SYS_DATA=/opt/data
+TZ_SYS_BIN=/usr/bin
+TZ_SYS_SMACK=/etc/smack
 
 # Tizen 3 (multi user):
 #TZ_SYS_HOME=/home
@@ -17,6 +19,8 @@ TZ_SYS_DATA=/opt/data
 #TZ_SYS_SHARE=/usr/share
 #TZ_SYS_ETC=/etc
 #TZ_SYS_DATA=/opt/data
+#TZ_SYS_BIN=/usr/bin
+#TZ_SYS_SMACK=/etc/smack
 
 ############# Core & Framework dirs #############
 
@@ -24,8 +28,14 @@ TZ_SYS_DATA=/opt/data
 TZ_SYS_DB=/opt/dbspace
 TZ_SYS_CONFIG=/opt/var/kdb
 TZ_SYS_APP=/opt/apps
+TZ_SYS_RW_WIDGET=/opt/share/widget
+TZ_SYS_RO_WIDGET=/usr/share/widget
 TZ_SYS_RW_DESKTOP_APP=/opt/share/applications
 TZ_SYS_RO_DESKTOP_APP=/usr/share/applications
+TZ_SYS_RW_WRT_ENGINE=/opt/share/wrt-engine
+TZ_SYS_RO_WRT_ENGINE=/usr/share/wrt-engine
+TZ_SYS_RW_PACKAGES=/opt/share/packages
+TZ_SYS_RO_PACKAGES=/usr/share/packages
 TZ_SYS_WRT_PLUGINS_CONF=/usr/etc/wrt-plugins
 TZ_SYS_TIZEN_APIS_CONF=/usr/etc/tizen-apis
 TZ_SYS_ACE_CONF=/usr/etc/ace
@@ -34,8 +44,14 @@ TZ_SYS_ACE_CONF=/usr/etc/ace
 #TZ_SYS_DB=/opt/dbspace
 #TZ_SYS_CONFIG=/opt/kdb
 #TZ_SYS_APP=/opt/apps
+#TZ_SYS_RW_WIDGET=/opt/share/widget
+#TZ_SYS_RO_WIDGET=/usr/share/widget
 #TZ_SYS_RW_DESKTOP_APP=/opt/share/applications
 #TZ_SYS_RO_DESKTOP_APP=/usr/share/applications
+#TZ_SYS_RW_WRT_ENGINE=/opt/share/wrt-engine
+#TZ_SYS_RO_WRT_ENGINE=/usr/share/wrt-engine
+#TZ_SYS_RW_PACKAGES=/opt/share/packages
+#TZ_SYS_RO_PACKAGES=/usr/share/packages
 #TZ_SYS_WRT_PLUGINS_CONF=/etc/wrt-plugins
 #TZ_SYS_TIZEN_APIS_CONF=/etc/tizen-apis
 #TZ_SYS_ACE_CONF=/etc/ace
