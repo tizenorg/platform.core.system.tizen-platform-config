@@ -12,6 +12,7 @@ TZ_SYS_ETC=/opt/etc
 TZ_SYS_DATA=/opt/data
 TZ_SYS_BIN=/usr/bin
 TZ_SYS_SMACK=/etc/smack
+TZ_SYS_STORAGE=/opt/storage
 
 # Tizen 3 (multi user):
 #TZ_SYS_HOME=/home
