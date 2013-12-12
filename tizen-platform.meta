@@ -10,6 +10,7 @@ TZ_SYS_ROOT=/opt/home/root
 TZ_SYS_SHARE=/opt/share
 TZ_SYS_ETC=/opt/etc
 TZ_SYS_DATA=/opt/data
+TZ_SYS_STORAGE=/opt/storage
 
 # Tizen 3 (multi user):
 #TZ_SYS_HOME=/home
