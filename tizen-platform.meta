@@ -28,6 +28,7 @@ TZ_SYS_SMACK=/etc/smack
 TZ_SYS_DB=/opt/dbspace
 TZ_SYS_CONFIG=/opt/var/kdb
 TZ_SYS_APP=/opt/apps
+TZ_SYS_APP_PREINSTALL=/opt/usr/apps/.preinstallWidgets
 TZ_SYS_RW_WIDGET=/opt/share/widget
 TZ_SYS_RO_WIDGET=/usr/share/widget
 TZ_SYS_RW_DESKTOP_APP=/opt/share/applications
