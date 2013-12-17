@@ -38,6 +38,7 @@ TZ_SYS_RW_WRT_ENGINE=/opt/share/wrt-engine
 TZ_SYS_RO_WRT_ENGINE=/usr/share/wrt-engine
 TZ_SYS_RW_PACKAGES=/opt/share/packages
 TZ_SYS_RO_PACKAGES=/usr/share/packages
+TZ_SYS_WRT_CONF=/usr/etc/wrt
 TZ_SYS_WRT_PLUGINS_CONF=/usr/etc/wrt-plugins
 TZ_SYS_TIZEN_APIS_CONF=/usr/etc/tizen-apis
 TZ_SYS_ACE_CONF=/usr/etc/ace
@@ -63,7 +64,7 @@ TZ_SYS_ACE_CONF=/usr/etc/ace
 ############################################################
 
 TZ_SDK_USER_NAME=developer
-TZ_SDK_HOME=/home/developer/sdk_tools
+TZ_SDK_HOME=/home/developer
 
 ############################################################
 #                   USER VARIABLES                         #
