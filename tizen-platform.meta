@@ -78,6 +78,8 @@ TZ_USER_NAME=app
 TZ_USER_GROUP=app
 TZ_USER_HOME=$TZ_SYS_HOME/app
 TZ_USER_SHARE=/opt/usr/share
+TZ_USER_DATA=/opt/usr/data
+TZ_USER_ETC=/opt/usr/etc
 
 # Tizen 3 (multi user):
 #TZ_USER_NAME=$USER
