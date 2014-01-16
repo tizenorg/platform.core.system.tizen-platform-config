@@ -28,7 +28,8 @@ TZ_SYS_STORAGE=/opt/storage
 # Tizen 3 (single user):
 TZ_SYS_DB=/opt/dbspace
 TZ_SYS_CONFIG=/opt/var/kdb
-TZ_SYS_APP=/opt/apps
+TZ_SYS_RW_APP=/opt/apps
+TZ_SYS_RO_APP=/usr/apps
 TZ_SYS_APP_PREINSTALL=/opt/usr/apps/.preinstallWidgets
 TZ_SYS_RW_WIDGET=/opt/share/widget
 TZ_SYS_RO_WIDGET=/usr/share/widget
@@ -46,7 +47,8 @@ TZ_SYS_ACE_CONF=/usr/etc/ace
 # Tizen 3 (multi user):
 #TZ_SYS_DB=/opt/dbspace
 #TZ_SYS_CONFIG=/opt/kdb
-#TZ_SYS_APP=/opt/apps
+#TZ_SYS_RW_APP=/opt/apps
+#TZ_SYS_RO_APP=/opt/apps
 #TZ_SYS_RW_WIDGET=/opt/share/widget
 #TZ_SYS_RO_WIDGET=/usr/share/widget
 #TZ_SYS_RW_DESKTOP_APP=/opt/share/applications
@@ -92,14 +94,12 @@ TZ_USER_ETC=/opt/usr/etc
 # Tizen 3 (single user):
 TZ_USER_DB=/opt/usr/dbspace
 TZ_USER_CONFIG=/opt/var/kdb
-TZ_USER_RW_APP=/opt/usr/apps
-TZ_USER_RO_APP=/usr/apps
+TZ_USER_APP=/opt/usr/apps
 
 # Tizen 3 (multi user):
 #TZ_USER_DB=$TZ_USER_HOME/dbspace
 #TZ_USER_CONFIG=$TZ_USER_HOME/kdb
-#TZ_USER_RW_APP=$TZ_USER_HOME/apps_rw
-#TZ_USER_RO_APP=$TZ_USER_HOME/apps_ro
+#TZ_USER_APP=$TZ_USER_HOME/apps_rw
 
 ############# Content dirs #############
 
