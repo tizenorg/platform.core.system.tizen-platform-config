@@ -77,8 +77,8 @@ TZ_SDK_TOOLS=$TZ_SDK_HOME/sdk_tools
 ############# Base dirs #############
 
 # Tizen 3 (single user):
-TZ_USER_NAME=app
-TZ_USER_HOME=$TZ_SYS_HOME/app
+TZ_USER_NAME=carole
+TZ_USER_HOME=$TZ_SYS_HOME/carole
 TZ_USER_SHARE=/opt/usr/share
 TZ_USER_DATA=/opt/usr/data
 TZ_USER_ETC=/opt/usr/etc
