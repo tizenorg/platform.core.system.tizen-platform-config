@@ -24,7 +24,7 @@ TZ_SYS_DATA=/usr/data
 TZ_SYS_BIN=/usr/bin
 TZ_SYS_SMACK=/etc/smack
 TZ_SYS_STORAGE=/usr/storage
-TZ_SYS_USER_GROUP=app
+TZ_SYS_USER_GROUP=users
 
 ############# Core & Framework dirs #############
 
