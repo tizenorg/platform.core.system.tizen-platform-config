@@ -2,15 +2,15 @@
 
 Name:           tizen-platform-config
 Version:        1.0
-Release:        1
-Summary:		Tizen Platform Configuration 
-License:		MIT
+Release:        0
+Summary:        Tizen Platform Configuration 
+License:        MIT
 Url:            http://www.tizen.org
 Group:          System/Configuration
 Source0:        %{name}-%{version}.tar.gz
 Source1:        %{name}-rpmlintrc
-Source1001:		%{name}.manifest
-BuildRequires:	tizen-platform-wrapper   
+Source1001:     %{name}.manifest
+BuildRequires:  tizen-platform-wrapper   
 
 # the main package only contains a config file but other dependent packages 
 # will contain binary. So, we can't build a noarch package and have to avoid 
@@ -20,26 +20,26 @@ BuildRequires:	tizen-platform-wrapper
 Tizen Platform Configuration - variables definitions
 
 %package -n %{libname}
-Summary:		Tizen Platform Configuration - helper library
-Group:			System/Libraries
+Summary:        Tizen Platform Configuration - helper library
+Group:          System/Libraries
 License:        LGPL-2.0
-Requires:		%{name} = %{version}
+Requires:       %{name} = %{version}
 %description -n %{libname}
 Tizen Platform Configuration - helper library to lookup Tizen variables easily
 
 %package -n %{libname}-devel
-Summary:		Tizen Platform Configuration - helper libray headers, RPM macros
-Group:			Development/Libraries
+Summary:        Tizen Platform Configuration - helper libray headers, RPM macros
+Group:          Development/Libraries
 License:        LGPL-2.0
-Requires:		%{libname} = %{version}
+Requires:       %{libname} = %{version}
 %description -n %{libname}-devel
 Tizen Platform Configuration - helper library headers to include in source code, RPM macros to call in spec files
 
 %package -n %{name}-tools
-Summary:		Tizen Platform Configuration - tools
-Group:			System/Utilities
+Summary:        Tizen Platform Configuration - tools
+Group:          System/Utilities
 License:        LGPL-2.0
-Requires:		%{libname} = %{version}
+Requires:       %{libname} = %{version}
 %description -n %{name}-tools
 Tizen Platform Configuration - helper program to lookup Tizen variables easily
 
@@ -48,8 +48,8 @@ Tizen Platform Configuration - helper program to lookup Tizen variables easily
 cp %{SOURCE1001} .
 
 %build
-%autogen \
-	--disable-static
+%reconfigure \
+    --disable-static
 
 make %{?_smp_mflags}
 
@@ -83,4 +83,3 @@ make check
 %files -n %{name}-tools
 %manifest %{name}.manifest
 %{_bindir}/*
-
