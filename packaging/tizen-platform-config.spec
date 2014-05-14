@@ -12,8 +12,8 @@ Source1:        %{name}-rpmlintrc
 Source1001:     %{name}.manifest
 BuildRequires:  tizen-platform-wrapper
 
-# the main package only contains a config file but other dependent packages 
-# will contain binary. So, we can't build a noarch package and have to avoid 
+# the main package only contains a config file but other dependent packages
+# will contain binary. So, we can't build a noarch package and have to avoid
 # a rpmlint warning using a filter in xxx-rpmlintrc
 
 %description
@@ -33,7 +33,8 @@ Group:          Development/Libraries
 License:        LGPL-2.0
 Requires:       %{libname} = %{version}
 %description -n %{libname}-devel
-Tizen Platform Configuration - helper library headers to include in source code, RPM macros to call in spec files
+Tizen Platform Configuration - helper library headers to include in source code,
+RPM macros to call in spec files
 
 %package -n %{name}-tools
 Summary:        Tizen Platform Configuration - tools
@@ -48,13 +49,11 @@ Tizen Platform Configuration - helper program to lookup Tizen variables easily
 cp %{SOURCE1001} .
 
 %build
-%reconfigure \
-    --disable-static
-
-make %{?_smp_mflags}
+%reconfigure --disable-static
+%__make %{?_smp_mflags}
 
 %check
-make check
+%__make check
 
 %install
 %make_install
@@ -83,3 +82,4 @@ make check
 %files -n %{name}-tools
 %manifest %{name}.manifest
 %{_bindir}/*
+
