@@ -103,7 +103,7 @@ TZ_USER_LIVE=$TZ_USER_HOME/live
 
 # Tizen 3 (multi user):
 TZ_USER_DB=$TZ_USER_HOME/.applications/dbspace
-TZ_USER_PAKCAGES=$TZ_USER_HOME/.applications/mainfest
+TZ_USER_PACKAGES=$TZ_USER_HOME/.applications/mainfest
 TZ_USER_DESKTOP=$TZ_USER_HOME/.applications/desktop
 
 TZ_USER_CONFIG=$TZ_USER_HOME/kdb
