@@ -46,6 +46,8 @@ TZ_SYS_USER_GROUP=users
 #TZ_SYS_WRT_PLUGINS_CONF=/usr/etc/wrt-plugins
 #TZ_SYS_TIZEN_APIS_CONF=/usr/etc/tizen-apis
 #TZ_SYS_ACE_CONF=/usr/etc/ace
+#TZ_SYS_RW_UG=/opt/ug
+#TZ_SYS_RO_UG=/usr/ug
 
 # Tizen 3 (multi user):
 TZ_SYS_DB=/usr/dbspace
@@ -63,6 +65,8 @@ TZ_SYS_RO_PACKAGES=/usr/share/packages
 TZ_SYS_WRT_PLUGINS_CONF=/etc/wrt-plugins
 TZ_SYS_TIZEN_APIS_CONF=/etc/tizen-apis
 TZ_SYS_ACE_CONF=/etc/ace
+TZ_SYS_RW_UG=/usr/ug
+TZ_SYS_RO_UG=/usr/ug
 
 ############################################################
 #                   SDK VARIABLES                          #
@@ -85,6 +89,7 @@ TZ_SDK_TOOLS=$TZ_SDK_HOME/sdk_tools
 #TZ_USER_DATA=/opt/usr/data
 #TZ_USER_ETC=/opt/usr/etc
 #TZ_USER_LIVE=/opt/usr/live
+#TZ_USER_UG=/opt/usr/ug
 
 # Tizen 3 (multi user):
 TZ_USER_NAME=$USER
@@ -93,6 +98,7 @@ TZ_USER_SHARE=$TZ_USER_HOME/share
 TZ_USER_DATA=$TZ_USER_HOME/data
 TZ_USER_ETC=$TZ_USER_HOME/etc
 TZ_USER_LIVE=$TZ_USER_HOME/live
+TZ_USER_UG=$TZ_USER_HOME/ug
 
 ############# Core & Framework dirs #############
 
