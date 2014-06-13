@@ -108,7 +108,9 @@ TZ_USER_UG=$TZ_USER_HOME/ug
 #TZ_USER_APP=/opt/usr/apps
 
 # Tizen 3 (multi user):
-TZ_USER_DB=$TZ_USER_HOME/dbspace
+TZ_USER_DB=$TZ_USER_HOME/.applications/dbspace
+TZ_USER_PACKAGES=$TZ_USER_HOME/.applications/manifest
+TZ_USER_DESKTOP=$TZ_USER_HOME/.applications/desktop
 TZ_USER_CONFIG=$TZ_USER_HOME/kdb
 TZ_USER_APP=$TZ_USER_HOME/apps_rw
 
