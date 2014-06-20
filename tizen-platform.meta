@@ -52,6 +52,7 @@ TZ_SYS_USER_GROUP=users
 #TZ_SYS_RO_UG=/usr/ug
 
 # Tizen 3 (multi user):
+TZ_SYS_APP_PREINSTALL=/opt/usr/apps/.preinstallWidgets
 TZ_SYS_DB=/usr/dbspace
 TZ_SYS_CONFIG=/usr/kdb
 TZ_SYS_RW_APP=/usr/apps
