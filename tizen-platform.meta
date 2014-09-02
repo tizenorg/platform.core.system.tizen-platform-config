@@ -25,6 +25,7 @@ TZ_SYS_BIN=/usr/bin
 TZ_SYS_SMACK=/etc/smack
 TZ_SYS_STORAGE=/usr/storage
 TZ_SYS_USER_GROUP=users
+TZ_SYS_GLOBALAPP_USER=tizenglobalapp
 
 ############# Core & Framework dirs #############
 
