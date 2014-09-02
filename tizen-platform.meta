@@ -26,6 +26,7 @@ TZ_SYS_SMACK=/etc/smack
 TZ_SYS_STORAGE=/usr/storage
 TZ_SYS_USER_GROUP=users
 TZ_SYS_GLOBALAPP_USER=tizenglobalapp
+TZ_SYS_USER_SHARED_ENTRY=content
 ############# Core & Framework dirs #############
 
 # Tizen 3 (single user):
@@ -134,7 +135,7 @@ TZ_USER_APP=$TZ_USER_HOME/apps_rw
 #TZ_USER_DOWNLOADS=$TZ_USER_CONTENT/Downloads
 
 # Tizen 3 (multi user):
-TZ_USER_CONTENT=$TZ_USER_HOME/content
+TZ_USER_CONTENT=$TZ_USER_HOME/$TZ_SYS_USER_SHARED_ENTRY
 TZ_USER_CAMERA=$TZ_USER_CONTENT/Camera
 TZ_USER_VIDEOS=$TZ_USER_CONTENT/Videos
 TZ_USER_IMAGES=$TZ_USER_CONTENT/Images
