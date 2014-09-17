@@ -72,6 +72,8 @@ TZ_SYS_TIZEN_APIS_CONF=/etc/tizen-apis
 TZ_SYS_ACE_CONF=/etc/ace
 TZ_SYS_RW_UG=/usr/ug
 TZ_SYS_RO_UG=/usr/ug
+TZ_SYS_RUN=/var/run
+TZ_SYS_OPT_RUN=/opt/var/run
 
 ############################################################
 #                   SDK VARIABLES                          #
