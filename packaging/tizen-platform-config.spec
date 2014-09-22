@@ -1,7 +1,7 @@
 %define libname libtzplatform-config
 
 Name:           tizen-platform-config
-Version:        1.0
+Version:        2.0
 Release:        0
 Summary:        Tizen Platform Configuration
 License:        MIT
@@ -10,7 +10,7 @@ Group:          System/Configuration
 Source0:        %{name}-%{version}.tar.gz
 Source1:        %{name}-rpmlintrc
 Source1001:     %{name}.manifest
-BuildRequires:  tizen-platform-wrapper
+BuildRequires:  tizen-platform-wrapper >= 2
 
 # the main package only contains a config file but other dependent packages
 # will contain binary. So, we can't build a noarch package and have to avoid
@@ -78,6 +78,7 @@ cp %{SOURCE1001} .
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/*.h
 %config %{_sysconfdir}/rpm/macros.tizen-platform
+%{_libdir}/%{libname}/tzplatform-config-static.o
 
 %files -n %{name}-tools
 %manifest %{name}.manifest
