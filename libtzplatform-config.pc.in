@@ -4,7 +4,7 @@ libdir=@libdir@
 includedir=@includedir@
 Name: @PACKAGE_NAME@
 Description: Tizen Platform Config library.
-Version: @PACKAGE_VERSION@
+Version: @LIBTZPLATFORM_CONFIG_VERSION@
 URL: @PACKAGE_URL@
-Libs: -L${libdir} -ltzplatform-config-@LIBTZPLATFORM_CONFIG_VERSION@ 
+Libs: -L${libdir} -ltzplatform-config-static -ltzplatform-config-@LIBTZPLATFORM_CONFIG_VERSION@
 Cflags: -I${includedir}/ 
