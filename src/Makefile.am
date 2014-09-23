@@ -1,10 +1,15 @@
 lib_LTLIBRARIES = libtzplatform-config-@LIBTZPLATFORM_CONFIG_VERSION@.la
 
+lib_LIBRARIES = libtzplatform-config-static.a
+
 bin_PROGRAMS = tzplatform-get
 
-wrappersrcdir=$(shell pkg-config --variable=srcdir tizen-platform-wrapper)
+wrappersrcdir=$(shell pkg-config --variable=datadir tizen-platform-wrapper)
 
-SRC_FROMWRAPPER= \
+SRC_FROMWRAPPER_STATIC= \
+	static-api.c
+
+SRC_FROMWRAPPER_SHARED= \
 	buffer.h \
 	buffer.c \
 	foreign.h \
@@ -17,19 +22,34 @@ SRC_FROMWRAPPER= \
 	passwd.c \
 	scratch.h \
 	scratch.c \
-	tzplatform_config.c \
+	context.c \
+	context.h \
+	hashing.c \
+	hashing.h \
+	init.c \
+	init.h \
+	shared-api.c \
+	shared-api.h \
+	tzplatform_config.sym \
 	tzplatform_config.h
+
+SRC_FROMWRAPPER=$(SRC_FROMWRAPPER_SHARED) $(SRC_FROMWRAPPER_STATIC)
 
 SRC_FROMTOOL= \
 	tzplatform_variables.h \
+	signup.inc \
 	hash.inc
+
+CFLAGS += -fPIC
 
 BUILT_SOURCES=$(SRC_FROMWRAPPER) $(SRC_FROMTOOL)
 
 CLEANFILES=$(SRC_FROMWRAPPER) $(SRC_FROMTOOL)
 
-nodist_libtzplatform_config_@LIBTZPLATFORM_CONFIG_VERSION@_la_SOURCES = \
-	$(SRC_FROMWRAPPER) \
+libtzplatform_config_static_a_SOURCES = $(SRC_FROMWRAPPER_STATIC)
+
+libtzplatform_config_@LIBTZPLATFORM_CONFIG_VERSION@_la_SOURCES = \
+	$(SRC_FROMWRAPPER_SHARED) \
 	$(SRC_FROMTOOL)
 
 tizen-platform.conf: ../tizen-platform.meta
@@ -44,8 +64,11 @@ tzplatform_variables.h: tizen-platform.conf
 hash.inc: tizen-platform.conf
 	tzplatform-tool c $< >$@
 
+signup.inc: tizen-platform.conf
+	tzplatform-tool signup $< >$@
+
 libtzplatform_config_@LIBTZPLATFORM_CONFIG_VERSION@_la_LDFLAGS = -version-info $(LIBTZPLATFORM_CONFIG_SO_VERSION)
-libtzplatform_config_@LIBTZPLATFORM_CONFIG_VERSION@_la_LDFLAGS += -export-symbols-regex tzplatform_.*
+libtzplatform_config_@LIBTZPLATFORM_CONFIG_VERSION@_la_LDFLAGS += -Wl,--version-script=tzplatform_config.sym
 libtzplatform_config_@LIBTZPLATFORM_CONFIG_VERSION@_la_LDFLAGS += -Wl,-O3
 libtzplatform_config_@LIBTZPLATFORM_CONFIG_VERSION@_la_LDFLAGS += -lpthread
 
@@ -61,4 +84,7 @@ tzplatform_config_sysconfdir= $(sysconfdir)/rpm
 dist_tzplatform_config_sysconf_DATA=macros.tizen-platform
 
 tzplatform_get_SOURCES = tzplatform_get.c
-tzplatform_get_LDADD = libtzplatform-config-@LIBTZPLATFORM_CONFIG_VERSION@.la
+tzplatform_get_LDADD = libtzplatform-config-static.a libtzplatform-config-@LIBTZPLATFORM_CONFIG_VERSION@.la
+
+
+
