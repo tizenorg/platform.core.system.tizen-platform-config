@@ -78,7 +78,18 @@ nobase_libtzplatform_config_include_HEADERS = tzplatform_variables.h tzplatform_
 dist_sysconf_DATA=tizen-platform.conf
 
 macros.tizen-platform: tizen-platform.conf
-	tzplatform-tool rpm $< | grep -v TZ_USER_ >$@
+	tzplatform-tool rpm $< | grep -v TZ_USER_ | sed -r \
+		-e "s|(\s)/usr/share/man|\1%{_mandir}|g" \
+		-e "s|(\s)/usr/share/info|\1%{_infodir}|g" \
+		-e "s|(\s)/usr/share|\1%{_datadir}|g" \
+		-e "s|(\s)/usr/bin|\1%{_bindir}|g" \
+		-e "s|(\s)/usr/sbin|\1%{_sbindir}|g" \
+		-e "s|(\s)/usr/include|\1%{_includedir}|g" \
+		-e "s|(\s)/usr/lib|\1%{_libdir}|g" \
+		-e "s|(\s)/usr|\1%{_prefix}|g" \
+		-e "s|(\s)/etc|\1%{_sysconfdir}|g" \
+		-e "s|(\s)/var|\1%{_var}|g" \
+		>$@
 
 tzplatform_config_sysconfdir= $(sysconfdir)/rpm
 dist_tzplatform_config_sysconf_DATA=macros.tizen-platform
