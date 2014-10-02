@@ -28,7 +28,7 @@ TZ_SYS_USER_GROUP=users
 TZ_SYS_GLOBALAPP_USER=tizenglobalapp
 
 # which user to use when applications start request are sent by system daemons
-TZ_SYS_DEFAULT_USER=app
+TZ_SYS_DEFAULT_USER=guest
 
 ############# Core & Framework dirs #############
 
