@@ -8,8 +8,8 @@ wrappersrcdir=$(shell pkg-config --variable=datadir tizen-platform-wrapper)
 
 SRC_FROMWRAPPER_STATIC= \
 	static-api.c \
-	isadmin.h \
-	isadmin.c
+	groups.h \
+	groups.c
 
 SRC_FROMWRAPPER_SHARED= \
 	buffer.h \
