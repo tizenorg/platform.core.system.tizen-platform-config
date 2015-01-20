@@ -59,6 +59,7 @@ TZ_SYS_DEFAULT_USER=guest
 # Tizen 3 (multi user):
 TZ_SYS_APP_PREINSTALL=/opt/usr/apps/.preinstallWidgets
 TZ_SYS_DB=/usr/dbspace
+TZ_SYS_DEBUG_PORT=9222
 TZ_SYS_CONFIG=/usr/kdb
 TZ_SYS_RW_APP=/usr/apps
 TZ_SYS_RO_APP=/usr/apps
