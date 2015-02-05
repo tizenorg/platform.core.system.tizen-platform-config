@@ -12,6 +12,7 @@ Source0:        %{name}-%{version}.tar.gz
 Source1:        %{name}-rpmlintrc
 Source1001:     %{name}.manifest
 BuildRequires:  tizen-platform-wrapper >= 2
+Requires:       smack
 
 # the main package only contains a config file but other dependent packages
 # will contain binary. So, we can't build a noarch package and have to avoid
@@ -58,6 +59,36 @@ cp %{SOURCE1001} .
 
 %install
 %make_install
+
+%post
+##############################################
+# BEGIN - creation of the /etc/skel/content
+##############################################
+saveHOME="$HOME"
+HOME="%{_sysconfdir}/skel"
+. "%{_sysconfdir}/tizen-platform.conf"
+cat << ENDOFCAT |
+$TZ_USER_HOME        User::Home           true
+$TZ_USER_CONTENT     User::Home           true
+$TZ_USER_CAMERA      User::App::Shared    true
+$TZ_USER_DOCUMENTS   User::App::Shared    true
+$TZ_USER_DOWNLOADS   User::App::Shared    true
+$TZ_USER_GAMES       User::App::Shared    true
+$TZ_USER_IMAGES      User::App::Shared    true
+$TZ_USER_OTHERS      User::App::Shared    true
+$TZ_USER_SOUNDS      User::App::Shared    true
+$TZ_USER_VIDEOS      User::App::Shared    true
+$TZ_USER_SHARE       User::App::Shared    true
+ENDOFCAT
+LANG= sort | while read skelname context transmute; do
+	mkdir -p "$skelname"
+	chsmack -a "$context" "$skelname"
+	[[ "$transmute" = true ]] && chsmack -t "$skelname"
+done
+HOME="$saveHOME"
+##############################################
+# END - creation of the /etc/skel/content
+##############################################
 
 %post -n %{libname} -p /sbin/ldconfig
 
