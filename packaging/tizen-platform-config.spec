@@ -69,6 +69,7 @@ HOME="%{_sysconfdir}/skel"
 . "%{_sysconfdir}/tizen-platform.conf"
 cat << ENDOFCAT |
 $TZ_USER_HOME        User::Home           true
+$TZ_USER_APPROOT     User::Home           true
 $TZ_USER_CONTENT     User::Home           true
 $TZ_USER_CAMERA      User::App::Shared    true
 $TZ_USER_DOCUMENTS   User::App::Shared    true

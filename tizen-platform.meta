@@ -120,10 +120,11 @@ TZ_USER_UG=$TZ_USER_HOME/ug
 #TZ_USER_APP=/opt/usr/apps
 
 # Tizen 3 (multi user):
-TZ_USER_DB=$TZ_USER_HOME/.applications/dbspace
-TZ_USER_PACKAGES=$TZ_USER_HOME/.applications/manifest
-TZ_USER_DESKTOP=$TZ_USER_HOME/.applications/desktop
-TZ_USER_ICONS=$TZ_USER_HOME/.applications/icons
+TZ_USER_APPROOT=$TZ_USER_HOME/.applications
+TZ_USER_DB=$TZ_USER_APPROOT/dbspace
+TZ_USER_PACKAGES=$TZ_USER_APPROOT/manifest
+TZ_USER_DESKTOP=$TZ_USER_APPROOT/desktop
+TZ_USER_ICONS=$TZ_USER_APPROOT/icons
 TZ_USER_CONFIG=$TZ_USER_HOME/kdb
 TZ_USER_APP=$TZ_USER_HOME/apps_rw
 
