@@ -91,6 +91,7 @@ LANG= sort | while read skelname context transmute; do
 	chsmack -a "$context" "$skelname"
 	[ "$transmute" = true ] && chsmack -t "$skelname"
 done
+chmod 700 $HOME
 HOME="$saveHOME"
 ##############################################
 # END - creation of the /etc/skel/content
