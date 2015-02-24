@@ -100,4 +100,10 @@ tzplatform_get_SOURCES = tzplatform_get.c
 tzplatform_get_LDADD = libtzplatform-config-static.a libtzplatform-config-@LIBTZPLATFORM_CONFIG_VERSION@.la
 
 
+.PHONY: install-skel-dir-hook
+
+install-skel-dir-hook: tizen-platform.conf
+	../tzplatform-create-skel $(DESTDIR)$(sysconfdir) $<
+
+install-exec-hook: install-skel-dir-hook
 

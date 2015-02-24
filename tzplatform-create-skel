@@ -1,0 +1,43 @@
+#!/bin/sh
+
+if [ $# -lt 2 ]; then
+	echo " usage) $0 sysconfdir conf_file"
+	exit 1
+fi
+
+HOME=$1/skel
+CONF=./$2
+
+if ! [ -e $CONF ]; then
+	echo "$CONF file not found" >&2
+	exit 1
+fi
+
+. $CONF
+
+DIRS=""
+DIRS="$DIRS $TZ_USER_SHARE"
+DIRS="$DIRS $TZ_USER_DATA"
+DIRS="$DIRS $TZ_USER_ETC"
+DIRS="$DIRS $TZ_USER_LIVE"
+DIRS="$DIRS $TZ_USER_UG"
+DIRS="$DIRS $TZ_USER_DB"
+DIRS="$DIRS $TZ_USER_PACKAGES"
+DIRS="$DIRS $TZ_USER_DESKTOP"
+DIRS="$DIRS $TZ_USER_ICONS"
+DIRS="$DIRS $TZ_USER_CONFIG"
+DIRS="$DIRS $TZ_USER_APP"
+DIRS="$DIRS $TZ_USER_CONTENT"
+DIRS="$DIRS $TZ_USER_CAMERA"
+DIRS="$DIRS $TZ_USER_VIDEOS"
+DIRS="$DIRS $TZ_USER_IMAGES"
+DIRS="$DIRS $TZ_USER_SOUNDS"
+DIRS="$DIRS $TZ_USER_GAMES"
+DIRS="$DIRS $TZ_USER_DOCUMENTS"
+DIRS="$DIRS $TZ_USER_OTHERS"
+DIRS="$DIRS $TZ_USER_DOWNLOADS"
+
+for dir in $DIRS; do
+	echo "create dir: $dir"
+	mkdir -p $dir
+done

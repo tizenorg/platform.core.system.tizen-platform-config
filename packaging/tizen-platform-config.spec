@@ -25,6 +25,7 @@ Summary:        Tizen Platform Configuration - helper library
 Group:          System/Libraries
 License:        LGPL-2.0
 Requires:       %{name} = %{version}
+Requires:       %{name}-skel = %{version}
 %description -n %{libname}
 Tizen Platform Configuration - helper library to lookup Tizen variables easily
 
@@ -44,6 +45,14 @@ License:        LGPL-2.0
 Requires:       %{libname} = %{version}
 %description -n %{name}-tools
 Tizen Platform Configuration - helper program to lookup Tizen variables easily
+
+%package skel
+Summary:        Tizen Platform Configuration - skeleton directory
+Group:          System/Configuration
+License:        LGPL-2.0
+%description skel
+Tizen Platform Configuration - skeleton directory for supporting the default
+tizen user directory hierarchy
 
 %prep
 %setup -q
@@ -85,3 +94,6 @@ cp %{SOURCE1001} .
 %manifest %{name}.manifest
 %{_bindir}/*
 
+%files skel
+%manifest %{name}.manifest
+%{_sysconfdir}/skel/
