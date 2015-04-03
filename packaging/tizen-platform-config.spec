@@ -97,6 +97,9 @@ HOME="$saveHOME"
 # END - creation of the /etc/skel/content
 ##############################################
 
+mkdir -p $TZ_SYS_STORAGE
+chsmack -a 'System::Shared' -t $TZ_SYS_STORAGE
+
 %post -n %{libname} -p /sbin/ldconfig
 
 %postun -n %{libname} -p /sbin/ldconfig
