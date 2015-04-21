@@ -13,6 +13,7 @@ Source1:        %{name}-rpmlintrc
 Source1001:     %{name}.manifest
 BuildRequires:  tizen-platform-wrapper >= 2
 Requires(post): smack
+Requires(post): coreutils
 
 # the main package only contains a config file but other dependent packages
 # will contain binary. So, we can't build a noarch package and have to avoid
