@@ -52,6 +52,7 @@ Tizen Platform Configuration - helper program to lookup Tizen variables easily
 cp %{SOURCE1001} .
 
 %build
+CFLAGS+=" -fgnu89-inline "
 %reconfigure --enable-static
 %__make %{?_smp_mflags}
 
