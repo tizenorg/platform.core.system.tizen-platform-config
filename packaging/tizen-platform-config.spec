@@ -102,6 +102,10 @@ mkdir -p $TZ_SYS_STORAGE
 chsmack -a 'System::Shared' -t $TZ_SYS_STORAGE
 chmod 777 $TZ_SYS_STORAGE
 
+mkdir -p $TZ_SYS_MEDIA
+chsmack -a 'System::Shared' -t $TZ_SYS_MEDIA
+chmod 777 $TZ_SYS_MEDIA
+
 %post -n %{libname} -p /sbin/ldconfig
 
 %postun -n %{libname} -p /sbin/ldconfig

@@ -24,6 +24,7 @@ TZ_SYS_DATA=/usr/data
 TZ_SYS_BIN=/usr/bin
 TZ_SYS_SMACK=/etc/smack
 TZ_SYS_STORAGE=/usr/storage
+TZ_SYS_MEDIA=/usr/media
 TZ_SYS_USER_GROUP=users
 TZ_SYS_GLOBALAPP_USER=tizenglobalapp
 TZ_SYS_ADMIN_GROUP=system
