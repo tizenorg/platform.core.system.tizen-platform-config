@@ -63,48 +63,59 @@ cp %{SOURCE1001} .
 
 %post
 ##############################################
-# BEGIN - creation of the /etc/skel/content
+# BEGIN - setting of predefined directories (also /etc/skel)
 ##############################################
 saveHOME="$HOME"
 HOME="%{_sysconfdir}/skel"
 . "%{_sysconfdir}/tizen-platform.conf"
 cat << ENDOFCAT |
-$TZ_USER_HOME        User::Home           true
-$TZ_USER_APPROOT     User::Home           true
-$TZ_USER_CONTENT     User::Home           true
-$TZ_USER_CAMERA      User::App::Shared    true
-$TZ_USER_DOCUMENTS   User::App::Shared    true
-$TZ_USER_DOWNLOADS   User::App::Shared    true
-$TZ_USER_GAMES       User::App::Shared    true
-$TZ_USER_IMAGES      User::App::Shared    true
-$TZ_USER_OTHERS      User::App::Shared    true
-$TZ_USER_SOUNDS      User::App::Shared    true
-$TZ_USER_VIDEOS      User::App::Shared    true
-$TZ_USER_SHARE       User::App::Shared    true
-$TZ_USER_APP         User                 false
-$TZ_USER_DB          User                 false
-$TZ_USER_DESKTOP     User                 false
-$TZ_USER_ICONS       User::Home           true
-$TZ_USER_PACKAGES    User                 false
+MODE 777
+SMACK System::Shared true
+$TZ_SYS_STORAGE
+$TZ_SYS_MEDIA
+
+MODE 700
+SMACK User::Home true
+$TZ_USER_HOME
+$TZ_USER_APPROOT
+$TZ_USER_ICONS
+$TZ_USER_CONTENT
+
+SMACK User::App::Shared true
+$TZ_USER_CAMERA
+$TZ_USER_DOCUMENTS
+$TZ_USER_DOWNLOADS
+$TZ_USER_GAMES
+$TZ_USER_IMAGES
+$TZ_USER_OTHERS
+$TZ_USER_SOUNDS
+$TZ_USER_VIDEOS
+$TZ_USER_SHARE
+
+SMACK User false
+$TZ_USER_APP
+$TZ_USER_DB
+$TZ_USER_DESKTOP
+$TZ_USER_PACKAGES
 ENDOFCAT
-LANG= sort | while read skelname context transmute; do
-	mkdir -p "$skelname"
-	chsmack -a "$context" "$skelname"
-	[ "$transmute" = true ] && chsmack -t "$skelname"
+awk '
+  BEGIN         {mode="700"; context="_"; transmute="false"}
+  $1 == "MODE"  {mode=$2 ; next}
+  $1 == "SMACK" {context=$2 ; transmute=$3; next}
+  NF            {print $1, mode, context, transmute} ' |
+LANG=C sort |
+while read dirname mode context transmute; do
+        mkdir -p -m "$mode" "$dirname"
+        if [ "$transmute" = true ]; then
+                chsmack -a "$context" "$dirname"
+        else
+                chsmack -t -a "$context" "$dirname"
+        fi >&2
 done
-chmod 700 $HOME
 HOME="$saveHOME"
 ##############################################
-# END - creation of the /etc/skel/content
+# END - setting of predefined directories (also /etc/skel)
 ##############################################
-
-mkdir -p $TZ_SYS_STORAGE
-chsmack -a 'System::Shared' -t $TZ_SYS_STORAGE
-chmod 777 $TZ_SYS_STORAGE
-
-mkdir -p $TZ_SYS_MEDIA
-chsmack -a 'System::Shared' -t $TZ_SYS_MEDIA
-chmod 777 $TZ_SYS_MEDIA
 
 %post -n %{libname} -p /sbin/ldconfig
 
@@ -131,4 +142,3 @@ chmod 777 $TZ_SYS_MEDIA
 %files -n %{name}-tools
 %manifest %{name}.manifest
 %{_bindir}/*
-
