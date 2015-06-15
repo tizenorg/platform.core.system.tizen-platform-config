@@ -12,7 +12,6 @@ Source0:        %{name}-%{version}.tar.gz
 Source1:        %{name}-rpmlintrc
 Source1001:     %{name}.manifest
 BuildRequires:  tizen-platform-wrapper >= 2
-Requires(post): gawk
 Requires(post): smack
 Requires(post): coreutils
 
@@ -99,11 +98,14 @@ $TZ_USER_DB
 $TZ_USER_DESKTOP
 $TZ_USER_PACKAGES
 ENDOFCAT
-awk '
-  BEGIN         {mode="700"; context="_"; transmute="false"}
-  $1 == "MODE"  {mode=$2 ; next}
-  $1 == "SMACK" {context=$2 ; transmute=$3; next}
-  NF            {print $1, mode, context, transmute} ' |
+while read s1 s2 s3; do
+  case "$s1" in
+    MODE) m="$s2";;
+    SMACK) c="$s2"; t="$s3";;
+    "") ;;
+    *) echo "$s1 ${m:-700} ${c:-_} ${t:-false}";;
+  esac
+done |
 LANG=C sort |
 while read dirname mode context transmute; do
         mkdir -p -m "$mode" "$dirname"
