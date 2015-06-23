@@ -91,11 +91,15 @@ $TZ_USER_OTHERS
 $TZ_USER_SOUNDS
 $TZ_USER_VIDEOS
 $TZ_USER_SHARE
+$TZ_USER_HOME/.pki/nssdb
+$TZ_USER_APP/xwalk-service
 
-SMACK User false
-$TZ_USER_APP
+SMACK System::Shared true
 $TZ_USER_DB
 $TZ_USER_DESKTOP
+$TZ_USER_APP
+
+SMACK User false
 $TZ_USER_PACKAGES
 ENDOFCAT
 while read s1 s2 s3; do
