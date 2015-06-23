@@ -78,7 +78,6 @@ MODE 700
 SMACK User::Home true
 $TZ_USER_HOME
 $TZ_USER_APPROOT
-$TZ_USER_ICONS
 $TZ_USER_CONTENT
 
 SMACK User::App::Shared true
@@ -93,11 +92,16 @@ $TZ_USER_MUSIC
 $TZ_USER_VIDEOS
 $TZ_USER_SHARE
 $TZ_USER_CACHE
+$TZ_USER_HOME/.pki/nssdb
+$TZ_USER_APP/xwalk-service
 
-SMACK User false
-$TZ_USER_APP
+SMACK System::Shared true
 $TZ_USER_DB
 $TZ_USER_DESKTOP
+$TZ_USER_APP
+$TZ_USER_ICONS
+
+SMACK User false
 $TZ_USER_PACKAGES
 ENDOFCAT
 while read s1 s2 s3; do
@@ -112,9 +116,9 @@ LANG=C sort |
 while read dirname mode context transmute; do
         mkdir -p -m "$mode" "$dirname"
         if [ "$transmute" = true ]; then
-                chsmack -a "$context" "$dirname"
+                chsmack -a "$context" -t "$dirname"
         else
-                chsmack -t -a "$context" "$dirname"
+                chsmack -a "$context" "$dirname"
         fi >&2
 done
 HOME="$saveHOME"
