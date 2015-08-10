@@ -128,6 +128,7 @@ TZ_USER_DESKTOP=$TZ_USER_APPROOT/desktop
 TZ_USER_ICONS=$TZ_USER_APPROOT/icons
 TZ_USER_CONFIG=$TZ_USER_HOME/kdb
 TZ_USER_APP=$TZ_USER_HOME/apps_rw
+TZ_USER_CACHE=$TZ_USER_HOME/.cache
 
 ############# Content dirs #############
 
