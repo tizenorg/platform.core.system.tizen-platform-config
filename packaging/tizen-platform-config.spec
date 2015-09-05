@@ -79,6 +79,7 @@ SMACK User::Home true
 $TZ_USER_HOME
 $TZ_USER_APPROOT
 $TZ_USER_CONTENT
+$TZ_USER_DB
 
 SMACK User::App::Shared true
 $TZ_USER_CAMERA
@@ -97,7 +98,6 @@ $TZ_USER_HOME/.pki/nssdb
 $TZ_USER_APP/xwalk-service
 
 SMACK System::Shared true
-$TZ_USER_DB
 $TZ_USER_DESKTOP
 $TZ_USER_APP
 $TZ_USER_ICONS
