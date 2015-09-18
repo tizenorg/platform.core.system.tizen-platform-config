@@ -80,6 +80,9 @@ $TZ_USER_HOME
 $TZ_USER_APPROOT
 $TZ_USER_CONTENT
 $TZ_USER_DB
+$TZ_USER_PACKAGES
+$TZ_USER_ICONS
+$TZ_USER_APP
 
 SMACK User::App::Shared true
 $TZ_USER_CAMERA
@@ -99,11 +102,7 @@ $TZ_USER_APP/xwalk-service
 
 SMACK System::Shared true
 $TZ_USER_DESKTOP
-$TZ_USER_APP
-$TZ_USER_ICONS
 
-SMACK User false
-$TZ_USER_PACKAGES
 ENDOFCAT
 while read s1 s2 s3; do
   case "$s1" in
