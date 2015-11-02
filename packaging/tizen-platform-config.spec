@@ -89,6 +89,9 @@ SMACK User::Home false
 $TZ_SYS_DB
 $TZ_SYS_RW_PACKAGES
 $TZ_SYS_RW_APP
+
+MODE 775
+SMACK User::Home true
 $TZ_SYS_RW_ICONS
 $TZ_SYS_RW_ICONS/default
 $TZ_SYS_RW_ICONS/default/small
