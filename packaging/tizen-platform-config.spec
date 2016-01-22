@@ -144,7 +144,7 @@ HOME="$saveHOME"
 
 %files
 %manifest %{name}.manifest
-%license MIT
+%license LICENSE
 %config %{_sysconfdir}/tizen-platform.conf
 
 %files -n %{libname}
@@ -153,7 +153,7 @@ HOME="$saveHOME"
 
 %files -n %{libname}-devel
 %manifest %{name}.manifest
-%license LGPL_2.0
+%license LICENSE
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/*.h
