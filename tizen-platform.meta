@@ -18,13 +18,18 @@
 # Tizen 3 (multi user):
 TZ_SYS_HOME=/home
 TZ_SYS_ROOT=/root
-TZ_SYS_SHARE=/usr/share
-TZ_SYS_ETC=/etc
-TZ_SYS_DATA=/usr/data
+TZ_SYS_SHARE=/opt/share
+TZ_SYS_RO_SHARE=/usr/share
+TZ_SYS_ETC=/opt/etc
+TZ_SYS_DATA=/opt/data
 TZ_SYS_BIN=/usr/bin
+TZ_SYS_SBIN=/usr/sbin
 TZ_SYS_SMACK=/etc/smack
-TZ_SYS_STORAGE=/usr/storage
+TZ_SYS_STORAGE=/usr/media
 TZ_SYS_MEDIA=/usr/media
+TZ_SYS_TEMP_MNT=/mnt
+TZ_SYS_SRV=/srv
+TZ_SYS_VAR=/opt/var
 TZ_SYS_USER_GROUP=users
 TZ_SYS_GLOBALAPP_USER=tizenglobalapp
 TZ_SYS_ADMIN_GROUP=system
@@ -59,7 +64,7 @@ TZ_SYS_DEFAULT_USER=guest
 
 # Tizen 3 (multi user):
 TZ_SYS_APP_PREINSTALL=/opt/usr/apps/.preinstallWidgets
-TZ_SYS_DB=/usr/dbspace
+TZ_SYS_DB=/opt/dbspace
 TZ_SYS_DEBUG_PORT=9222
 TZ_SYS_CONFIG=/usr/kdb
 TZ_SYS_RW_APP=/usr/apps
