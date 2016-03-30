@@ -98,16 +98,6 @@ $TZ_SYS_RW_ICONS/default
 $TZ_SYS_RW_ICONS/default/small
 
 SMACK User::App::Shared true
-$TZ_USER_CONTENT
-$TZ_USER_CAMERA
-$TZ_USER_DOCUMENTS
-$TZ_USER_DOWNLOADS
-$TZ_USER_GAMES
-$TZ_USER_IMAGES
-$TZ_USER_OTHERS
-$TZ_USER_SOUNDS
-$TZ_USER_MUSIC
-$TZ_USER_VIDEOS
 $TZ_USER_SHARE
 $TZ_USER_CACHE
 $TZ_USER_CONFIG
@@ -148,6 +138,7 @@ HOME="$saveHOME"
 %manifest %{name}.manifest
 %license LICENSE
 %config %{_sysconfdir}/tizen-platform.conf
+%attr(755,root,root) %{_sysconfdir}/gumd/useradd.d/*
 
 %files -n %{libname}
 %manifest %{name}.manifest
