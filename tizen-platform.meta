@@ -91,9 +91,9 @@ TZ_SYS_RUN=/var/run
 #                   SDK VARIABLES                          #
 ############################################################
 
-TZ_SDK_USER_NAME=developer
-TZ_SDK_HOME=/home/developer
-TZ_SDK_TOOLS=$TZ_SDK_HOME/sdk_tools
+TZ_SDK_USER_NAME=owner
+TZ_SDK_HOME=/home/owner
+TZ_SDK_TOOLS=${TZ_SDK_HOME}/apps_rw/tmp/sdk_tools
 
 ############################################################
 #                   USER VARIABLES                         #
