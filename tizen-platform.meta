@@ -38,6 +38,9 @@ TZ_SYS_ADMIN_GROUP=system
 # which user to use when applications start request are sent by system daemons
 TZ_SYS_DEFAULT_USER=owner
 
+# The default directory to store coredumps and logdumps when a crash is occurred
+TZ_SYS_CRASH=/opt/share/crash/dump
+
 ############# Core & Framework dirs #############
 
 # Tizen 3 (single user):
