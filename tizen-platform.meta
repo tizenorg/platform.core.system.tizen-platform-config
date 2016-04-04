@@ -31,6 +31,7 @@ TZ_SYS_MEDIA=/opt/media
 TZ_SYS_TEMP_MNT=/mnt
 TZ_SYS_SRV=/srv
 TZ_SYS_VAR=/opt/var
+TZ_SYS_CRASH=/opt/share/crash/dump
 TZ_SYS_USER_GROUP=users
 TZ_SYS_GLOBALAPP_USER=tizenglobalapp
 TZ_SYS_ADMIN_GROUP=system
