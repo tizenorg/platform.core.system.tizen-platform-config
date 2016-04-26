@@ -81,7 +81,7 @@ $TZ_USER_APPROOT
 $TZ_USER_DB
 $TZ_USER_PACKAGES
 $TZ_USER_ICONS
-$TZ_USER_APP
+$TZ_USER_APP $TZ_SYS_GLOBALAPP_USER
 
 MODE 775
 SMACK User::Home false
@@ -123,12 +123,13 @@ while read s1 s2 s3; do
     MODE) m="$s2";;
     SMACK) c="$s2"; t="$s3";;
     "") ;;
-    *) echo "$s1 ${m:-700} ${c:-_} ${t:-false}";;
+    *) u="$s2"; g="$s3"; echo "$s1 ${m:-700} ${c:-_} ${t:-false} ${u:-root} ${g:-root}";;
   esac
 done |
 LANG=C sort |
-while read dirname mode context transmute; do
+while read dirname mode context transmute user group; do
         mkdir -p -m "$mode" "$dirname"
+	chown "$user:$group" "$dirname"
         if [ "$transmute" = true ]; then
                 chsmack -a "$context" -t "$dirname"
         else
