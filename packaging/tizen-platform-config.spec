@@ -117,6 +117,9 @@ $TZ_USER_APP/xwalk-service
 SMACK System::Shared true
 $TZ_USER_DESKTOP
 
+SMACK System::Shared false
+$TZ_SYS_ETC
+
 ENDOFCAT
 while read s1 s2 s3; do
   case "$s1" in
