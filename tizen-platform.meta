@@ -34,6 +34,8 @@ TZ_SYS_VAR=/opt/var
 TZ_SYS_USER_GROUP=users
 TZ_SYS_GLOBALAPP_USER=tizenglobalapp
 TZ_SYS_ADMIN_GROUP=system
+TZ_SYS_GLOBALUSER_DATA=/opt/usr/data
+TZ_SYS_GLOBALUSER_DBSPACE=/opt/usr/dbspace
 
 # which user to use when applications start request are sent by system daemons
 TZ_SYS_DEFAULT_USER=owner
