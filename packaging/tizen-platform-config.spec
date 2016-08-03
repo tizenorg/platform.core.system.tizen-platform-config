@@ -12,6 +12,7 @@ Source0:        %{name}-%{version}.tar.gz
 Source1:        %{name}-rpmlintrc
 Source1001:     %{name}.manifest
 BuildRequires:  tizen-platform-wrapper >= 2
+BuildRequires:  tizen-platform-config-meta
 Requires(post): smack
 Requires(post): coreutils
 

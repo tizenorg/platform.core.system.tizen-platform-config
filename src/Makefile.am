@@ -54,7 +54,7 @@ libtzplatform_config_@LIBTZPLATFORM_CONFIG_VERSION@_la_SOURCES = \
 	$(SRC_FROMWRAPPER_SHARED) \
 	$(SRC_FROMTOOL)
 
-tizen-platform.conf: ../tizen-platform.meta
+tizen-platform.conf: /etc/tizen-platform.meta
 	tzplatform-tool pretty $< >$@
 
 $(SRC_FROMWRAPPER) tzplatform_get.c:
